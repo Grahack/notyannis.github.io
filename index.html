@@ -41,15 +41,12 @@
     var url = "https://api.github.com/users/notyannis/starred";
     var request = $.get(url, {}, function() {}, 'jsonp');
     request.done(function(data) {
-        console.log("github");
-        console.log(data.data);
         var ul = $('<ul/>').addClass('star-liste').appendTo(target_elt);
         $.each(data.data, function(i, item) {
             var li = $('<li/>').appendTo(ul);
             $("<a/>").attr("href", item.html_url)
                 .attr("title", "un projet que j’affectionne")
-                .html(item.name)
-                .appendTo(target_elt).appendTo(li);
+                .html(item.name);
             if ( i === 10 ) {  // max items
                 return false;
             }
@@ -68,8 +65,7 @@
             var li = $('<li/>').appendTo(ul);
             $("<a/>").attr("href", item.u)
                 .attr("title", "un projet que j’affectionne")
-                .html(item.d)
-                .appendTo(target_elt).appendTo(li);
+                .html(item.d);
             if ( i === 10 ) {  // max items
                 return false;
             }
