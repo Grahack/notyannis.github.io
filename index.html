@@ -58,8 +58,8 @@
 <script type="text/javascript">
     var target_elt = $('#liste2');
     var url = "http://feeds.delicious.com/v2/json/notyannis/videogames?count={1.100}";
-    var request = $.get(url, {}, function() {}, 'jsonp');
-    request.done(function(data) {
+    var request2 = $.get(url, {}, function() {}, 'jsonp');
+    request2.done(function(data) {
         var ul = $('<ul/>').addClass('star-liste').appendTo(target_elt);
         $.each(data, function(i, item) {
             var li = $('<li/>').appendTo(ul);
